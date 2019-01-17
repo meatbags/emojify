@@ -7,7 +7,7 @@ class Number extends React.Component {
       <div className='input-number'>
         <div className='input-number__label'>{this.props.label}</div>
         <div className='input-number__input'>
-          <input type='number' value={this.props.value} onChange={e => this.props.onChange(e, this.props)} />
+          <input type='number' min={this.props.min} max={this.props.max} value={this.props.value} onChange={e => this.props.onChange(e, this.props)} />
         </div>
       </div>
     )
@@ -15,9 +15,11 @@ class Number extends React.Component {
 }
 
 Number.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.number,
+  min: PropTypes.number,
+  max: PropTypes.number,
   onChange: PropTypes.func
 }
 

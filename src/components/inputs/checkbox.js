@@ -20,7 +20,7 @@ class Checkbox extends React.Component {
 }
 
 Checkbox.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.bool,
   onClick: PropTypes.func

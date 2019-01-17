@@ -4,25 +4,41 @@
  **/
 
 export default {
-  controls: [{
-    type: 'checkbox',
-    label: 'use default tilesheet',
-    value: true,
-  }, {
-    type: 'file',
-    label: 'input image',
-    value: null,
-  }, {
-    type: 'number',
-    label: 'tile size',
-    value: 32,
-  }, {
-    type: 'number',
-    label: 'output size',
-    value: 32,
-  }, {
-    type: 'button',
-    label: 'process',
-    value: null
-  }]
+  controls: {
+    useDefaultTileSheet: {
+      type: 'checkbox',
+      label: 'Use Default Tile Sheet',
+      value: true,
+    },
+    inputTileSheet: {
+      type: 'file',
+      label: 'Custom Tile Sheet',
+      value: null,
+      disabledBy: 'useDefaultTileSheet',
+    },
+    inputTileSize: {
+      type: 'number',
+      label: 'Input Tile Size',
+      value: 32,
+      min: 5,
+      max: 256,
+    },
+    inputImage: {
+      type: 'file',
+      label: 'Input Image',
+      value: null,
+    },
+    outputTileSize: {
+      type: 'number',
+      label: 'Output Tile Size',
+      value: 32,
+      min: 5,
+      max: 256,
+    },
+    processButton: {
+      type: 'button',
+      label: 'Process Image',
+      value: null
+    }
+  }
 };

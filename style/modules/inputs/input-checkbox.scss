@@ -3,9 +3,6 @@
   cursor: pointer;
 
   .input-checkbox__inner {
-    //display: flex;
-    //justify-content: center;
-
     .input-checkbox__slider {
       width: $sizeCheckbox * 2;
       height: $sizeCheckbox;
@@ -15,21 +12,21 @@
 
       .input-checkbox__indicator {
         position: absolute;
-        top: 0;
-        left: 0;
-        margin: $sizeCheckbox / 4;
-        width: $sizeCheckbox / 2;
-        height: $sizeCheckbox / 2;
+        top: 50%;
+        left: 2px;
+        transform: translateY(-50%);
+        width: $sizeCheckbox - 4px;
+        height: $sizeCheckbox - 4px;
         border: $border;
         border-radius: $sizeCheckbox;
+        transition: $transition;
       }
     }
   }
 
   &.active {
     .input-checkbox__inner .input-checkbox__slider .input-checkbox__indicator {
-      left: auto;
-      right: 0;
+      transform: translate($sizeCheckbox - 2px, -50%);
     }
   }
 }

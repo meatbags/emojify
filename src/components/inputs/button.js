@@ -15,7 +15,7 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   type: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func

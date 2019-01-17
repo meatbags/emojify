@@ -5,10 +5,10 @@ import ControlBox from '../components/control_box';
 const mapDispatchToProps = dispatch => {
   return {
     onInputFile: (e, props) => {
-      dispatch(inputFile(e.target.value || null, props.id));
+      dispatch(inputFile(props.id, e.target.value || null));
     },
     onInputNumber: (e, props) => {
-      dispatch(inputNumber(e.target.value || null, props.id));
+      dispatch(inputNumber(props.id, e.target.value || null));
     },
     onInputCheckbox: (e, props) => {
       dispatch(inputCheckbox(props.id));

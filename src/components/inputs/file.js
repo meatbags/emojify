@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 class File extends React.Component {
   render() {
     return (
-      <div className='input-file'>
+      <div className={`input-file ${this.props.disabled ? 'disabled' : ''}`}>
         <div className='input-file__label'>{this.props.label}</div>
         <div className='input-file__input'>
           <input
             type="file"
-            title=" "
             onChange={e => this.props.onChange(e, this.props)}
             />
         </div>
@@ -19,9 +18,10 @@ class File extends React.Component {
 }
 
 File.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 export default File;
