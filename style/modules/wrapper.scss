@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+
+  .wrapper__control-box {
+    width: 400px;
+  }
+
+  .wrapper__canvas {
+    flex: 1;
+  }
+}

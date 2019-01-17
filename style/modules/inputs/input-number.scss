@@ -1,0 +1,13 @@
+.input-number {
+  @extend .input-base;
+
+  .input-number__label {
+
+  }
+
+  .input-number__input {
+    input {
+      width: 50px;
+    }
+  }
+}

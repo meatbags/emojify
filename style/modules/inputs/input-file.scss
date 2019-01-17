@@ -1,0 +1,9 @@
+.input-file {
+  @extend .input-base;
+
+  .input-file__input {
+    input {
+      width: 100%;
+    }
+  }
+}

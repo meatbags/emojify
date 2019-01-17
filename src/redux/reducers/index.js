@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import temp from './temp';
+import controls from './controls';
 
-export default combineReducers({ temp });
+export default combineReducers({ controls });

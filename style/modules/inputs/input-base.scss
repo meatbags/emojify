@@ -1,0 +1,9 @@
+.input-base {
+  display: flex;
+
+  div {
+    @include padding(0.5, 0.5);
+    width: 50%;
+    color: red;
+  }
+}

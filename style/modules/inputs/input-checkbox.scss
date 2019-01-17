@@ -1,0 +1,35 @@
+.input-checkbox {
+  @extend .input-base;
+  cursor: pointer;
+
+  .input-checkbox__inner {
+    //display: flex;
+    //justify-content: center;
+
+    .input-checkbox__slider {
+      width: $sizeCheckbox * 2;
+      height: $sizeCheckbox;
+      border: $border;
+      border-radius: $sizeCheckbox;
+      position: relative;
+
+      .input-checkbox__indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: $sizeCheckbox / 4;
+        width: $sizeCheckbox / 2;
+        height: $sizeCheckbox / 2;
+        border: $border;
+        border-radius: $sizeCheckbox;
+      }
+    }
+  }
+
+  &.active {
+    .input-checkbox__inner .input-checkbox__slider .input-checkbox__indicator {
+      left: auto;
+      right: 0;
+    }
+  }
+}
