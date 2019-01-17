@@ -15,7 +15,7 @@ const controls = (state = {}, action) => {
     }
   });
 
-  // apply action
+  // apply action on target
   if (target) {
     switch(action.type) {
       case INPUT_FILE:

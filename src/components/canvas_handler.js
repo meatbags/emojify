@@ -7,6 +7,7 @@ class CanvasHandler extends React.Component {
     return (
       <div className='canvas-handler'>
         <Canvas id='input' />
+        <Canvas id='tilesheet' />
         <Canvas id='output' />
       </div>
     );

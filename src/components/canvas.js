@@ -5,14 +5,15 @@ class Canvas extends React.Component {
   componentDidMount() {
     const cvs = this.refs[this.props.id];
     const ctx = cvs.getContext('2d');
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, 0, 100, 100);
+    //ctx.fillStyle = '#000';
+    //ctx.fillRect(0, 0, 100, 100);
   }
 
   render() {
     return (
       <div className='canvas'>
         <div className='canvas__label'>{this.props.id}</div>
+        <div className='canvas__zoom'>- Zoom +</div>
         <canvas ref={this.props.id} />
       </div>
     )
