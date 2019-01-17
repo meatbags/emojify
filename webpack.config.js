@@ -1,14 +1,20 @@
+// modules
 var path = require('path');
 var webpack = require('webpack');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var appName = 'RXB';
+var MinifyPlugin = require("babel-minify-webpack-plugin");
+var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+// prefix
+var appName = 'EMOJIFY_APP';
+
+// paths
 var pathJS = './src/main.js';
 var pathSCSS = './style/main.js';
-var pathOutput = 'build';
-var MinifyPlugin = require("babel-minify-webpack-plugin");
+var pathOutput = 'dist';
 
-module.exports = [
-{
+module.exports = [{
   entry: {'app.min': pathJS},
   output: {
     library: appName,
@@ -28,9 +34,7 @@ module.exports = [
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  plugins: [
-    new MinifyPlugin({}, {comments: false})
-  ],
+  plugins: [new MinifyPlugin({}, {comments: false})],
   stats: {colors: true, warnings: false}
 }, {
   entry: {'style.webpack': pathSCSS},
@@ -51,6 +55,16 @@ module.exports = [
         }
       ]
     }]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   },
   plugins: [new MiniCssExtractPlugin({filename: "./style.css", allChunks: true})]
 }];
