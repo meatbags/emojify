@@ -20,7 +20,7 @@ export default {
       type: 'number',
       label: 'Input Tile Size',
       value: 32,
-      min: 5,
+      min: 1,
       max: 256,
     },
     inputImage: {
@@ -32,7 +32,7 @@ export default {
       type: 'number',
       label: 'Output Tile Size',
       value: 32,
-      min: 5,
+      min: 1,
       max: 256,
     },
     processButton: {
@@ -40,5 +40,5 @@ export default {
       label: 'Process Image',
       value: null
     }
-  }
+  },
 };

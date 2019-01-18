@@ -23,7 +23,7 @@ const controls = (state = {}, action) => {
       case INPUT_NUMBER:
         const value = action.value !== undefined ? parseInt(action.value) : null;
         if (!isNaN(value)) {
-          target.value = Math.max(target.min, Math.min(target.max, value));
+          target.value = value;
         }
         return nextState;
       case INPUT_BUTTON:
